@@ -17,15 +17,15 @@
 }
 
 .title {
-  color: #00a278;
+  color: burlywood;
 }
 
 .button {
-  background-color: #00a278 !important;
+  background-color: rgb(220, 180, 127) !important;
 }
 
 .button:hover {
-  background-color: #00845c !important;
+  background-color: rgb(221, 167, 97) !important;
 }
 
 @media screen and (min-width: 768px) {
