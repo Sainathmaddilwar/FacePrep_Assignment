@@ -33,6 +33,7 @@ const Home = () => {
         setPageNo((prev) => prev + 1);
         setIsLoading(false);
       });
+      // eslint-disable-next-line
     }, 1000);
 
     window.addEventListener("scroll", handleScroll);
@@ -57,7 +58,6 @@ const Home = () => {
       });
     }
   };
-  console.log(users);
 
   return (
     <div>
@@ -66,7 +66,7 @@ const Home = () => {
         <Grid container>
           <Grid item className="product-grid">
             <Box sx={{ mr: "10px", ml: "10px", mt: 2, mb: 2 }}>
-              <Grid container spacing={2}>
+              <Grid container spacing={2} justifyContent="center">
                 {users.map((ele, idx) => (
                   <Grid item xs={8} sm={6} md={4} lg={3} key={idx}>
                     <ProfileCard user={ele} />

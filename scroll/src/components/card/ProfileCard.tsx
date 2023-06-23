@@ -27,9 +27,9 @@ const ProfileCard: React.FC<CardProps> = ({ user }) => {
       <CardActionArea>
         <CardMedia
           component="img"
-          height="190"
+          height="100%"
           image={user.picture.large}
-          alt="green iguana"
+          alt="profile-picture"
         />
         <CardContent>
           <Typography gutterBottom variant="h5" component="div">
