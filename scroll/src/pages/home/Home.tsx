@@ -42,7 +42,13 @@ const Home = () => {
   }, []);
   const handleScroll = () => {
     const { scrollTop, clientHeight, scrollHeight } = document.documentElement;
-    if (scrollTop + clientHeight >= scrollHeight) {
+    const isAtBottem = scrollTop + clientHeight >= scrollHeight - 20;
+    // if (scrollTop + clientHeight >= scrollHeight)
+    if (
+      isAtBottem ||
+      (window.innerHeight + scrollTop >= document.body.offsetHeight &&
+        "ontouchstart" in window)
+    ) {
       setIsLoading(true);
       fetchProfiles(pageNo).then((data) => {
         setUsers((prev) => [...prev, ...data.results]);
