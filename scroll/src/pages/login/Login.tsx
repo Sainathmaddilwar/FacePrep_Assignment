@@ -4,7 +4,7 @@ import style from "./Login.module.css";
 import { LoginContext, LoginContextType } from "../../Context/LoginContex";
 import { Button, Stack, TextField } from "@mui/material";
 import { useContext } from "react";
-import { Navigate, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { Box } from "@mui/system";
 
 const Login = () => {
