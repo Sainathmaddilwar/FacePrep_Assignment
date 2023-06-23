@@ -1,20 +1,28 @@
 import React from "react";
 import { useState } from "react";
 import style from "./Login.module.css";
+import { LoginContext, LoginContextType } from "../../Context/LoginContex";
 import { Button, Stack, TextField } from "@mui/material";
+import { useContext } from "react";
 import { Box } from "@mui/system";
 
 const Login = () => {
-  const [username, setUsername] = useState<React.SetStateAction<string>>("");
-  const [password, setPassword] = useState<React.SetStateAction<string>>("");
-
+  const [username, setUsername] = useState<string>("");
+  const [password, setPassword] = useState<string>("");
+  const { login } = useContext(LoginContext) as LoginContextType;
   const handleLogin = () => {
     // const { dispatch } = context;
     const user = {
       username,
       password,
     };
-    console.log(username, password);
+    const token = login(username, password);
+    if (token) {
+      console.log("loggedIn");
+    } else {
+      console.log("failed");
+    }
+    // console.log(username, password);
     localStorage.setItem("user", JSON.stringify(user));
   };
   return (
