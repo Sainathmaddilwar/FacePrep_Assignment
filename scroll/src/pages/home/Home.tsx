@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { fetchProfiles } from "../../Api/Api";
 import Navbar from "../../components/navbar/Navbar";
 import ProfileCard from "../../components/card/ProfileCard";
+import Spinner from "../../components/spinner/Spinner";
 import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
 import style from "./Home.module.css";
@@ -70,10 +71,7 @@ const Home = () => {
           </Grid>
         </Grid>
       </div>
-      <div style={{ paddingBottom: "30px" }}>
-        {" "}
-        {isLoading && <h1>...Loading</h1>}
-      </div>
+      <div style={{ paddingBottom: "30px" }}> {isLoading && <Spinner />}</div>
     </div>
   );
 };
