@@ -23,7 +23,10 @@ interface CardProps {
 const ProfileCard: React.FC<CardProps> = ({ user }) => {
   let name = user.name.title + "." + user.name.first + " " + user.name.last;
   return (
-    <Card sx={{ maxWidth: 345 }}>
+    <Card
+      sx={{ maxWidth: 345 }}
+      style={{ backgroundColor: "rgb(246, 225, 197)" }}
+    >
       <CardActionArea>
         <CardMedia
           component="img"
